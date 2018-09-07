@@ -7,12 +7,12 @@ currentDirectory = os.getcwd()
 
 # JavaScript files
 
-workingFile = open(os.path.join(currentDirectory, "lib.min.js"), "w")
+workingFile = open(os.path.join(currentDirectory, "script.min.js"), "w")
 
 workingFile.write("")
 workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, "lib.min.js"), "a")
+workingFile = open(os.path.join(currentDirectory, "script.min.js"), "a")
 
 currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
