@@ -5,14 +5,23 @@ import re
 
 currentDirectory = os.getcwd()
 
+# Get filenames for files
+buildNamesFile = open(os.path.join(currentDirectory, "buildNames.txt"), "r")
+buildNames = buildNamesFile.read()
+
+minJS = buildNames.splitlines()[0]
+minCSS = buildNames.splitlines()[1]
+
+buildNamesFile.close()
+
 # JavaScript files
 
-workingFile = open(os.path.join(currentDirectory, "script.min.js"), "w")
+workingFile = open(os.path.join(currentDirectory, minJS), "w")
 
 workingFile.write("")
 workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, "script.min.js"), "a")
+workingFile = open(os.path.join(currentDirectory, minJS), "a")
 
 currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
@@ -33,12 +42,12 @@ workingFile.close()
 
 # CSS files
 
-workingFile = open(os.path.join(currentDirectory, "style.min.css"), "w")
+workingFile = open(os.path.join(currentDirectory, minCSS), "w")
 
 workingFile.write("")
 workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, "style.min.css"), "a")
+workingFile = open(os.path.join(currentDirectory, minCSS), "a")
 
 currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
 
