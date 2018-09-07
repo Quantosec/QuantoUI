@@ -11,6 +11,8 @@ buildNames = buildNamesFile.read()
 
 minJS = buildNames.splitlines()[0]
 minCSS = buildNames.splitlines()[1]
+docsJS = buildNames.splitlines()[2]
+docsCSS = buildNames.splitlines()[3]
 
 buildNamesFile.close()
 
@@ -69,12 +71,12 @@ workingFile.close()
 
 ## JavaScript files
 
-workingFile = open(os.path.join(currentDirectory, "jsdocs.json"), "w")
+workingFile = open(os.path.join(currentDirectory, docsJS), "w")
 
 workingFile.write("{\n")
 workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, "jsdocs.json"), "a")
+workingFile = open(os.path.join(currentDirectory, docsJS), "a")
 
 currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
@@ -101,12 +103,12 @@ workingFile.close()
 
 ## CSS files
 
-workingFile = open(os.path.join(currentDirectory, "cssdocs.json"), "w")
+workingFile = open(os.path.join(currentDirectory, docsCSS), "w")
 
 workingFile.write("{\n")
 workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, "cssdocs.json"), "a")
+workingFile = open(os.path.join(currentDirectory, docsCSS), "a")
 
 currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
 
