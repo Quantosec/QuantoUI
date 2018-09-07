@@ -92,9 +92,9 @@ for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
             elif readingFile.splitlines()[i].startswith(" * @return"):
                 workingFileTemp += '        "return": ' + readingFile.splitlines()[i][11:] + ',\n'
             elif readingFile.splitlines()[i].startswith(" * @info"):
-                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n'
+                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
 
-workingFileTemp = workingFileTemp[:-2] + "\n"
+workingFileTemp = workingFileTemp[:-3] + "\n"
 
 workingFile.write(workingFileTemp + "}")
 workingFile.close()
@@ -120,9 +120,9 @@ for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
             if readingFile.splitlines()[i].startswith(" * @selector"):
                 workingFileTemp += '    "' + readingFile.splitlines()[i][13:] + '": {\n'
             elif readingFile.splitlines()[i].startswith(" * @info"):
-                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n'
+                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
 
-workingFileTemp = workingFileTemp[:-2] + "\n"
+workingFileTemp = workingFileTemp[:-3] + "\n"
 
 workingFile.write(workingFileTemp + "}")
 workingFile.close()
