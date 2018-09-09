@@ -9,3 +9,6 @@ User interface for Quantosec web-apps.
 Documentation on the [GitHub Pages page](https://quantosec.github.io/QuantoUI/).
 
 This repository is licensed by the [Quantosec Open Source Licence](https://github.com/Quantosec/QuantoUI/blob/master/LICENCE.md).
+
+## Building QuantoUI
+Use `py build.py` to build QuantoUI. Please use Python 3 or higher. The build script should make the `py` command run Python 3.
