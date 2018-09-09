@@ -9,14 +9,15 @@ currentDirectory = os.getcwd()
 buildNamesFile = open(os.path.join(currentDirectory, "buildNames.txt"), "r")
 buildNames = buildNamesFile.read()
 
-minJS = buildNames.splitlines()[0]
-minCSS = buildNames.splitlines()[1]
-docsJS = buildNames.splitlines()[2]
-docsCSS = buildNames.splitlines()[3]
+licence = buildNames.splitlines()[0]
+minJS = buildNames.splitlines()[1]
+minCSS = buildNames.splitlines()[2]
+docsJS = buildNames.splitlines()[3]
+docsCSS = buildNames.splitlines()[4]
 
 buildNamesFile.close()
 
-# JavaScript files
+# Clear all minified files
 
 if minJS != "":
     workingFile = open(os.path.join(currentDirectory, minJS), "w")
@@ -24,7 +25,37 @@ if minJS != "":
     workingFile.write("")
     workingFile.close()
 
+if minCSS != "":
+    workingFile = open(os.path.join(currentDirectory, minCSS), "w")
+
+    workingFile.write("")
+    workingFile.close()
+
+# Licence
+
+if licence != "":
+    if minJS != "":
+        workingFile = open(os.path.join(currentDirectory, minJS), "w")
+
+        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/")
+        workingFile.close()
+
+    if minCSS != "":
+        workingFile = open(os.path.join(currentDirectory, minCSS), "w")
+
+        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/")
+        workingFile.close()
+
+# JavaScript files
+
+if minJS != "":
     workingFile = open(os.path.join(currentDirectory, minJS), "a")
+
+    currentReadingDirectory = os.path.join(os.getcwd(), "src", "js", "lib")
+
+    for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
+        if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
+            workingFile.write("\n" + open(os.path.join(currentReadingDirectory, currentFile), "r").read() + "\n")
 
     currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
@@ -46,11 +77,6 @@ if minJS != "":
 # CSS files
 
 if minCSS != "":
-    workingFile = open(os.path.join(currentDirectory, minCSS), "w")
-
-    workingFile.write("")
-    workingFile.close()
-
     workingFile = open(os.path.join(currentDirectory, minCSS), "a")
 
     currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")

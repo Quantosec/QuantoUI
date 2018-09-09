@@ -1,3 +1,4 @@
+LICENCE.md
 quantoui.min.js
 quantoui.min.css
 jsdocs.json
