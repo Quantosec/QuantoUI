@@ -18,113 +18,117 @@ buildNamesFile.close()
 
 # JavaScript files
 
-workingFile = open(os.path.join(currentDirectory, minJS), "w")
+if minJS != "":
+    workingFile = open(os.path.join(currentDirectory, minJS), "w")
 
-workingFile.write("")
-workingFile.close()
+    workingFile.write("")
+    workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, minJS), "a")
+    workingFile = open(os.path.join(currentDirectory, minJS), "a")
 
-currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
+    currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
-for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
-    if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
-        minified = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
-        minifiedLine = ""
+    for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
+        if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
+            minified = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
+            minifiedLine = ""
 
-        for i in range(0, len(minified.splitlines())):
-            if not minified.splitlines()[i].startswith("//"):
-                minifiedLine += minified.splitlines()[i]
+            for i in range(0, len(minified.splitlines())):
+                if not minified.splitlines()[i].startswith("//"):
+                    minifiedLine += minified.splitlines()[i]
 
-        minified = re.sub("/\*.*?\*/", "", minifiedLine.replace("  ", "").replace("\t", ""), flags=re.DOTALL)
+            minified = re.sub("/\*.*?\*/", "", minifiedLine.replace("  ", "").replace("\t", ""), flags=re.DOTALL)
 
-        workingFile.write(minified)
+            workingFile.write(minified)
 
-workingFile.close()
+    workingFile.close()
 
 # CSS files
 
-workingFile = open(os.path.join(currentDirectory, minCSS), "w")
+if minCSS != "":
+    workingFile = open(os.path.join(currentDirectory, minCSS), "w")
 
-workingFile.write("")
-workingFile.close()
+    workingFile.write("")
+    workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, minCSS), "a")
+    workingFile = open(os.path.join(currentDirectory, minCSS), "a")
 
-currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
+    currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
 
-for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
-    if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
-        minified = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
-        minifiedLine = ""
+    for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
+        if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
+            minified = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
+            minifiedLine = ""
 
-        for i in range(0, len(minified.splitlines())):
-            minifiedLine += minified.splitlines()[i]
+            for i in range(0, len(minified.splitlines())):
+                minifiedLine += minified.splitlines()[i]
 
-        minified = re.sub("/\*.*?\*/", "", minifiedLine.replace("  ", "").replace("\t", ""), flags=re.DOTALL)
+            minified = re.sub("/\*.*?\*/", "", minifiedLine.replace("  ", "").replace("\t", ""), flags=re.DOTALL)
 
-        workingFile.write(minified)
+            workingFile.write(minified)
 
-workingFile.close()
+    workingFile.close()
 
 # Documentation generation
 
 ## JavaScript files
 
-workingFile = open(os.path.join(currentDirectory, docsJS), "w")
+if docsJS != "":
+    workingFile = open(os.path.join(currentDirectory, docsJS), "w")
 
-workingFile.write("{\n")
-workingFile.close()
+    workingFile.write("{\n")
+    workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, docsJS), "a")
+    workingFile = open(os.path.join(currentDirectory, docsJS), "a")
 
-currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
+    currentReadingDirectory = os.path.join(os.getcwd(), "src", "js")
 
-workingFileTemp = ""
+    workingFileTemp = ""
 
-for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
-    if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
-        readingFile = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
+    for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
+        if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
+            readingFile = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
 
-        for i in range(0, len(readingFile.splitlines())):
-            if readingFile.splitlines()[i].startswith(" * @function"):
-                workingFileTemp += '    "' + readingFile.splitlines()[i][13:] + '": {\n'
-            elif readingFile.splitlines()[i].startswith(" * @params"):
-                workingFileTemp += '        "params": ' + readingFile.splitlines()[i][11:] + ",\n"
-            elif readingFile.splitlines()[i].startswith(" * @return"):
-                workingFileTemp += '        "return": ' + readingFile.splitlines()[i][11:] + ',\n'
-            elif readingFile.splitlines()[i].startswith(" * @info"):
-                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
+            for i in range(0, len(readingFile.splitlines())):
+                if readingFile.splitlines()[i].startswith(" * @function"):
+                    workingFileTemp += '    "' + readingFile.splitlines()[i][13:] + '": {\n'
+                elif readingFile.splitlines()[i].startswith(" * @params"):
+                    workingFileTemp += '        "params": ' + readingFile.splitlines()[i][11:] + ",\n"
+                elif readingFile.splitlines()[i].startswith(" * @return"):
+                    workingFileTemp += '        "return": ' + readingFile.splitlines()[i][11:] + ',\n'
+                elif readingFile.splitlines()[i].startswith(" * @info"):
+                    workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
 
-workingFileTemp = workingFileTemp[:-3] + "\n"
+    workingFileTemp = workingFileTemp[:-3] + "\n"
 
-workingFile.write(workingFileTemp + "}")
-workingFile.close()
+    workingFile.write(workingFileTemp + "}")
+    workingFile.close()
 
 ## CSS files
 
-workingFile = open(os.path.join(currentDirectory, docsCSS), "w")
+if docsCSS != "":
+    workingFile = open(os.path.join(currentDirectory, docsCSS), "w")
 
-workingFile.write("{\n")
-workingFile.close()
+    workingFile.write("{\n")
+    workingFile.close()
 
-workingFile = open(os.path.join(currentDirectory, docsCSS), "a")
+    workingFile = open(os.path.join(currentDirectory, docsCSS), "a")
 
-currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
+    currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
 
-workingFileTemp = ""
+    workingFileTemp = ""
 
-for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
-    if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
-        readingFile = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
+    for currentFile in os.listdir(os.path.join(currentReadingDirectory)):
+        if not os.path.isdir(os.path.join(currentReadingDirectory, currentFile)):
+            readingFile = open(os.path.join(currentReadingDirectory, currentFile), "r").read()
 
-        for i in range(0, len(readingFile.splitlines())):
-            if readingFile.splitlines()[i].startswith(" * @selector"):
-                workingFileTemp += '    "' + readingFile.splitlines()[i][13:] + '": {\n'
-            elif readingFile.splitlines()[i].startswith(" * @info"):
-                workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
+            for i in range(0, len(readingFile.splitlines())):
+                if readingFile.splitlines()[i].startswith(" * @selector"):
+                    workingFileTemp += '    "' + readingFile.splitlines()[i][13:] + '": {\n'
+                elif readingFile.splitlines()[i].startswith(" * @info"):
+                    workingFileTemp += '        "info": "' + readingFile.splitlines()[i][9:] + '"\n    },\n\n'
 
-workingFileTemp = workingFileTemp[:-3] + "\n"
+    workingFileTemp = workingFileTemp[:-3] + "\n"
 
-workingFile.write(workingFileTemp + "}")
-workingFile.close()
+    workingFile.write(workingFileTemp + "}")
+    workingFile.close()
