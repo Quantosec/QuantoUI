@@ -37,13 +37,13 @@ if licence != "":
     if minJS != "":
         workingFile = open(os.path.join(currentDirectory, minJS), "w")
 
-        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/")
+        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/\n")
         workingFile.close()
 
     if minCSS != "":
         workingFile = open(os.path.join(currentDirectory, minCSS), "w")
 
-        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/")
+        workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/\n")
         workingFile.close()
 
 # JavaScript files
