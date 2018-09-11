@@ -7,7 +7,7 @@ Here's how to get started with QuantoUI:
 
 ```html
 <link rel="stylesheet" href="quantoui.min.css">
-<link rel="stylesheet" href="quantoui.min.js">
+<script src="quantoui.min.js"></script>
 ```
 
 Of course, rename the filenames and their paths to wherever you keep the files.
