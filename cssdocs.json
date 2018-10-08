@@ -1,4 +1,28 @@
 {
+    "button": {
+        "info": "Clickable element that can aid with site navigation. Also uses hover effects."
+    },
+
+    "button.outline": {
+        "info": "Outlined version of a button but with a transparent fill colour."
+    },
+
+    "button.secondary": {
+        "info": "Button with a secondary colour scheme."
+    },
+
+    "button.secondary": {
+        "info": "Button with a colour scheme to represent an action with consequence."
+    },
+
+    "div": {
+        "info": "Container for elements."
+    },
+
+    "div.layout": {
+        "info": "Div for layout use."
+    },
+
     "i[symbol]": {
         "info": "Allows icon to be read by a screen reader."
     }

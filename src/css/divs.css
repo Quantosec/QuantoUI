@@ -1,0 +1,23 @@
+/*
+ * @selector div
+ * @info Container for elements.
+ */
+
+div {
+    margin: -8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/*
+ * @selector div.layout
+ * @info Div for layout use.
+ */
+
+div.layout {
+    margin: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding: unset;
+}

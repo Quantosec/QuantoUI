@@ -1,0 +1,90 @@
+/*
+ * @selector button
+ * @info Clickable element that can aid with site navigation. Also uses hover effects.
+ */
+
+button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--primary);
+    color: white;
+    border: 3px solid var(--primary);
+    border-radius: 30px;
+    font-size: 18pt;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    border: 3px solid var(--primary-hover);
+}
+
+/*
+ * @selector button.outline
+ * @info Outlined version of a button but with a transparent fill colour.
+ */
+
+button.outline {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+button.outline:hover {
+    color: var(--primary-hover);
+}
+
+/*
+ * @selector button.secondary
+ * @info Button with a secondary colour scheme.
+ */
+
+button.secondary {
+    background-color: var(--secondary);
+    border: 3px solid var(--secondary);
+}
+
+button.secondary:hover {
+    background-color: var(--secondary-hover);
+    border: 3px solid var(--secondary-hover);
+}
+
+button.outline.secondary {
+    background-color: transparent;
+    color: var(--secondary);
+    border: 3px solid var(--secondary);
+}
+
+button.outline.secondary:hover {
+    background-color: transparent;
+    color: var(--secondary-hover);
+    border: 3px solid var(--secondary-hover);
+}
+
+/*
+ * @selector button.secondary
+ * @info Button with a colour scheme to represent an action with consequence.
+ */
+
+button.bad {
+    background-color: var(--bad);
+    border: 3px solid var(--bad);
+}
+
+button.bad:hover {
+    background-color: var(--bad-hover);
+    border: 3px solid var(--bad-hover);
+}
+
+button.outline.bad {
+    background-color: transparent;
+    color: var(--bad);
+    border: 3px solid var(--bad);
+}
+
+button.outline.bad:hover {
+    background-color: transparent;
+    color: var(--bad-hover);
+    border: 3px solid var(--bad-hover);
+}
