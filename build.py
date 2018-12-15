@@ -19,13 +19,13 @@ buildNamesFile.close()
 
 # Clear all minified files
 
-if minJS != "":
+if minJS != "&":
     workingFile = open(os.path.join(currentDirectory, minJS), "w")
 
     workingFile.write("")
     workingFile.close()
 
-if minCSS != "":
+if minCSS != "&":
     workingFile = open(os.path.join(currentDirectory, minCSS), "w")
 
     workingFile.write("")
@@ -33,14 +33,14 @@ if minCSS != "":
 
 # Licence
 
-if licence != "":
-    if minJS != "":
+if licence != "&":
+    if minJS != "&":
         workingFile = open(os.path.join(currentDirectory, minJS), "w")
 
         workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/\n")
         workingFile.close()
 
-    if minCSS != "":
+    if minCSS != "&":
         workingFile = open(os.path.join(currentDirectory, minCSS), "w")
 
         workingFile.write("/*\n" + open(os.path.join(currentDirectory, licence), "r").read().replace("&copy;", "(C)") + "\n*/\n")
@@ -48,7 +48,7 @@ if licence != "":
 
 # JavaScript files
 
-if minJS != "":
+if minJS != "&":
     workingFile = open(os.path.join(currentDirectory, minJS), "a")
 
     currentReadingDirectory = os.path.join(os.getcwd(), "src", "js", "lib")
@@ -76,7 +76,7 @@ if minJS != "":
 
 # CSS files
 
-if minCSS != "":
+if minCSS != "&":
     workingFile = open(os.path.join(currentDirectory, minCSS), "a")
 
     currentReadingDirectory = os.path.join(os.getcwd(), "src", "css")
@@ -99,7 +99,7 @@ if minCSS != "":
 
 ## JavaScript files
 
-if docsJS != "":
+if docsJS != "&":
     workingFile = open(os.path.join(currentDirectory, docsJS), "w")
 
     workingFile.write("{\n")
@@ -132,7 +132,7 @@ if docsJS != "":
 
 ## CSS files
 
-if docsCSS != "":
+if docsCSS != "&":
     workingFile = open(os.path.join(currentDirectory, docsCSS), "w")
 
     workingFile.write("{\n")
