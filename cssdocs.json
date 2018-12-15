@@ -19,11 +19,19 @@
         "info": "Container for elements."
     },
 
+    "div.shade-light": {
+        "info": "Div with background colour of a light shade."
+    },
+
     "div.layout": {
         "info": "Div for layout use."
     },
 
     "i[symbol]": {
         "info": "Allows icon to be read by a screen reader."
+    },
+
+    "input": {
+        "info": "Element that can gather input from the user."
     }
 }

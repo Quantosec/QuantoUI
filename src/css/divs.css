@@ -2,7 +2,6 @@
  * @selector div
  * @info Container for elements.
  */
-
 div {
     margin: -8px;
     margin-top: 10px;
@@ -11,10 +10,17 @@ div {
 }
 
 /*
+ * @selector div.shade-light
+ * @info Div with background colour of a light shade.
+ */
+div.shade-light {
+    background-color: var(--shade-light);
+}
+
+/*
  * @selector div.layout
  * @info Div for layout use.
  */
-
 div.layout {
     margin: unset;
     margin-top: unset;

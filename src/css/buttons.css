@@ -2,7 +2,6 @@
  * @selector button
  * @info Clickable element that can aid with site navigation. Also uses hover effects.
  */
-
 button {
     padding-left: 20px;
     padding-right: 20px;
@@ -25,7 +24,6 @@ button:hover {
  * @selector button.outline
  * @info Outlined version of a button but with a transparent fill colour.
  */
-
 button.outline {
     background-color: transparent;
     color: var(--primary);
@@ -66,7 +64,6 @@ button.outline.secondary:hover {
  * @selector button.secondary
  * @info Button with a colour scheme to represent an action with consequence.
  */
-
 button.bad {
     background-color: var(--bad);
     border: 3px solid var(--bad);

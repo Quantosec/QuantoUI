@@ -1,0 +1,21 @@
+/*
+ * @selector input
+ * @info Element that can gather input from the user.
+ */
+input {
+    width: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--shade-light);
+    color: black;
+    border: 3px solid var(--shade-light);
+    border-radius: 30px;
+    font-size: 12pt;
+    outline: none;
+    transition: 1s;
+}
+
+input.contrast {
+    background-color: white;
+    border: 3px solid white;
+}
