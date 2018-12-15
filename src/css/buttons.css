@@ -10,7 +10,7 @@ button {
     color: white;
     border: 3px solid var(--primary);
     border-radius: 30px;
-    font-size: 18pt;
+    font-size: 12pt;
     text-transform: uppercase;
     cursor: pointer;
     transition: 1s;
