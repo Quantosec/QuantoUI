@@ -2,3 +2,27 @@
  * @selector i[symbol]
  * @info Allows icon to be read by a screen reader.
  */
+
+/*
+ * @selector .left
+ * @info Left-align text and elements.
+ */
+ .left {
+    text-align: left;
+}
+
+/*
+ * @selector .center
+ * @info Centre text and elements. Note the American spelling.
+ */
+.center {
+    text-align: center;
+}
+
+/*
+ * @selector .right
+ * @info Right-align text and elements.
+ */
+ .right {
+    text-align: right;
+}

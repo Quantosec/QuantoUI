@@ -27,3 +27,24 @@ div.layout {
     margin-bottom: unset;
     padding: unset;
 }
+
+/*
+ * @selector section
+ * @info Section for content grouping.
+ */
+section {
+    margin: -8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*
+ * @selector section.shade-light
+ * @info Section with background colour of a light shade.
+ */
+ section.shade-light {
+    background-color: var(--shade-light);
+}

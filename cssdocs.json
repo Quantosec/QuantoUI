@@ -11,7 +11,7 @@
         "info": "Button with a secondary colour scheme."
     },
 
-    "button.secondary": {
+    "button.bad": {
         "info": "Button with a colour scheme to represent an action with consequence."
     },
 
@@ -27,8 +27,28 @@
         "info": "Div for layout use."
     },
 
+    "section": {
+        "info": "Section for content grouping."
+    },
+
+    "section.shade-light": {
+        "info": "Section with background colour of a light shade."
+    },
+
     "i[symbol]": {
         "info": "Allows icon to be read by a screen reader."
+    },
+
+    ".left": {
+        "info": "Left-align text and elements."
+    },
+
+    ".center": {
+        "info": "Centre text and elements. Note the American spelling."
+    },
+
+    ".right": {
+        "info": "Right-align text and elements."
     },
 
     "input": {
